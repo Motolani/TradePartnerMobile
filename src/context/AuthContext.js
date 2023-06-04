@@ -21,12 +21,12 @@ const AuthProvider = ({children}) => {
 
       if(data.status == 200){
         // setErrorMessage(null);
-            let response = data;
-            console.log(response);
-            setUserToken(response.token);
-            console.log(response.token);
-            setUser(response.user);
-            setWalletBalance(response.balance);
+        let response = data;
+        console.log(response);
+        setUserToken(response.token);
+        console.log(response.token);
+        setUser(response.user);
+        setWalletBalance(response.balance);
             
       }
     } catch (error) {
@@ -35,8 +35,14 @@ const AuthProvider = ({children}) => {
     setIsLoading(false)
   }
 
+  const signOut = () => {
+    setUserToken(null);
+    setUser([]);
+    setWalletBalance([]);
+  }
+
     return (
-        <AuthContext.Provider value={{signIn, userToken, user, walletBalance}}>
+        <AuthContext.Provider value={{signIn, signOut, userToken, user, walletBalance}}>
           {children}
         </AuthContext.Provider>
     );

@@ -8,7 +8,7 @@ import IMG from '../../../../assets/img/backgroundSamp.png'
 
 const Dashboard = ({navigation}) => {
 
-  const { user, walletBalance } = useContext(AuthContext); 
+  const { user, walletBalance, signOut } = useContext(AuthContext); 
   const [showBalance, setShowBalance] = useState(false);
 
   const toggleBalance = () => {
@@ -29,7 +29,7 @@ const Dashboard = ({navigation}) => {
           <Text style={styles.userNameHi} > Hello, </Text>
           <Text style={styles.userName} > {user.name} </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.logoutContainer}>
+        <TouchableOpacity style={styles.logoutContainer} onPress={() => signOut()}>
           <Icon name="log-in-outline" size={68} color="#14407f" style={styles.logout} />
         </TouchableOpacity>
       </View>

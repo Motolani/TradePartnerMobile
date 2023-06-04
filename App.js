@@ -14,7 +14,7 @@ import Bills from './src/screens/Bills/Bills';
 import CabelTv from './src/screens/CabelTv/CabelTv';
 import WalletHistory from './src/screens/WalletHistory/WalletHistory';
 import AccountSettings from './src/screens/AccountSettings/AccountSettings';
-
+import Pinpage from './src/screens/Pinpage/Pinpage';
 const Stack = createNativeStackNavigator();
 const App = ( navigation ) => {
   const { userToken, user } = useContext(AuthContext);
@@ -32,6 +32,7 @@ const App = ( navigation ) => {
       <Stack.Screen options= { ({navigation}) => ({ headerStyle: { backgroundColor: '#b1b7bd', } })} name="Bills" component={Bills} /> 
       <Stack.Screen options= { ({navigation}) => ({ headerStyle: { backgroundColor: '#b1b7bd', } })} name="CableService" component={CabelTv} /> 
       <Stack.Screen options= { ({navigation}) => ({ headerStyle: { backgroundColor: '#b1b7bd', } })} name="WalletHistory" component={WalletHistory} /> 
+      <Stack.Screen options= { ({navigation}) => ({ headerStyle: { backgroundColor: '#7a7e85', } })} name="Enter Pin" component={Pinpage} /> 
     </Stack.Navigator>
     
     </NavigationContainer>

@@ -3,9 +3,9 @@ import React from 'react'
 
 const CustomButton = ({ onPress, text, type, textColor }) => {
   return (
-    <Pressable onPress={onPress} style={[styles.container, styles[`container_${type}`]]}>
+    <TouchableOpacity onPress={onPress} style={[styles.container, styles[`container_${type}`]]}>
       <Text style={[styles.text, styles[`text_${textColor}`]]}>{ text }</Text>
-    </Pressable>
+    </TouchableOpacity>
   )
 }
 

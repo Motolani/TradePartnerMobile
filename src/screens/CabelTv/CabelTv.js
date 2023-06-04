@@ -6,7 +6,7 @@ import { SelectList } from 'react-native-dropdown-select-list';
 import BillsInputWithText from '../../components/BillsInputWithText/BillsInputWithText';
 import CustomButtonTwo from '../../components/CustomButtonTwo/CustomButtonTwo';
 
-const CabelTv = () => {
+const CabelTv = ({navigation}) => {
   const [selectPlan, setSelectPlan] = useState('');
   const [provider, setProvider] = useState('');
   const [smartCard, setSmartCard] = useState('');
@@ -88,7 +88,7 @@ const CabelTv = () => {
       <View style={styles.submitButtonContainer}>
         <CustomButtonTwo
           text="Continue"
-          // onPress={onSubmit}
+          onPress={() => navigation.navigate('Enter Pin')}
           type="PinspayTwo"
           textColor="Green"
         />

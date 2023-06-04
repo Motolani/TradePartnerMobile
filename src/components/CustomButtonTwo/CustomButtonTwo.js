@@ -1,11 +1,11 @@
-import { View, Text, StyleSheet, Pressable } from 'react-native'
+import { View, Text, StyleSheet, Pressable, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const CustomButtonTwo = ({ onPress, text, type, textColor }) => {
+const CustomButtonTwo = ({ onPress, text, type, textColor, disabled}) => {
   return (
-    <Pressable onPress={onPress} style={[styles.container, styles[`container_${type}`]]}>
+    <TouchableOpacity disabled={disabled} onPress={onPress} style={[styles.container, styles[`container_${type}`]]}>
       <Text style={[styles.text, styles[`text_${textColor}`]]}>{ text }</Text>
-    </Pressable>
+    </TouchableOpacity>
   )
 }
 
@@ -41,6 +41,9 @@ const styles = StyleSheet.create({
     container_PinspayTwo: {
       backgroundColor:"#0c456d",
     },
+    container_Disabled:{
+      color: "#5cdb93"
+    },
     text_White:{
       color: "#ffffff",
     },
@@ -49,6 +52,9 @@ const styles = StyleSheet.create({
     },
     text_Green:{
       color: "#5cdb93",
+    },
+    text_Disabled:{
+      color:"#0c456d"
     }
 })
 export default CustomButtonTwo

@@ -1,1 +1,1 @@
-export {default} from './Bills';
+export {default} from './CabelTv';

@@ -6,7 +6,7 @@ import { SelectList } from 'react-native-dropdown-select-list';
 import BillsInputWithText from '../../components/BillsInputWithText/BillsInputWithText';
 import CustomButtonTwo from '../../components/CustomButtonTwo/CustomButtonTwo';
 
-const Airtime = () => {
+const Airtime = ({navigation}) => {
   const [amount, setAmount] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [network, setNetwork] = useState('');
@@ -62,7 +62,7 @@ const Airtime = () => {
       <View style={styles.submitButtonContainer}>
         <CustomButtonTwo
           text="Continue"
-          // onPress={onSubmit}
+          onPress={() => navigation.navigate('Enter Pin')}
           type="PinspayTwo"
           textColor="Green"
         />
